@@ -18,12 +18,13 @@ export const client = {
   googleEmbed: 'https://www.google.com/maps?q=478+College+Road+Birmingham+B44+0HL&output=embed',
   rating: 4.9,
   reviewCount: 0,
-  heroImage: '/images/men-hero.svg',
+  logo: '/images/men-logo.webp',
+  heroImage: '/images/men-cut-1.webp',
   gallery: [
-    {src:'/images/men-cut-1.svg',alt:'Example haircut gallery placeholder'},
-    {src:'/images/men-cut-2.svg',alt:'Example haircut gallery placeholder'},
-    {src:'/images/men-cut-3.svg',alt:'Example haircut gallery placeholder'},
-    {src:'/images/men-cut-4.svg',alt:'Example haircut gallery placeholder'},
+    {src:'/images/men-cut-1.webp',alt:'Illustrative haircut photograph, not the shop's portfolio'},
+    {src:'/images/men-cut-2.webp',alt:'Illustrative haircut photograph, not the shop's portfolio'},
+    {src:'/images/men-cut-3.webp',alt:'Illustrative haircut photograph, not the shop's portfolio'},
+    {src:'/images/men-cut-4.webp',alt:'Illustrative haircut photograph, not the shop's portfolio'},
   ],
   services: [
     ['Haircuts','Classic and modern cuts, finished to suit your style.'],
