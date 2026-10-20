@@ -197,7 +197,7 @@ function App() {
             <div className="rating-row">
               <div className="stars">{[0,1,2,3,4].map(i => <Star key={i} size={17} fill="currentColor" />)}</div>
               <strong>{business.rating||'—'}</strong>
-              <span>{business.reviews||'—'} reviews</span>
+              <span>Google rating</span>
             </div>
             <div className="hero-actions">
               <a className="hero-primary" href="#booking"><CalendarDays size={16} /> Book appointment</a>
@@ -211,11 +211,11 @@ function App() {
         </section>
 
         <section className="trust-strip" aria-label={'Why visit '+client.name}>
-          <a className="trust-item trust-reviews" href={business.googleMaps} target="_blank" rel="noopener noreferrer" aria-label={`Find ${client.name} on Google Maps. Rating ${business.rating||'—'} out of 5 from ${business.reviews||'—'} reviews`}>
+          <a className="trust-item trust-reviews" href={business.googleMaps} target="_blank" rel="noopener noreferrer" aria-label={`Find ${client.name} on Google Maps. Rating ${business.rating||'—'} out of 5`}>
             <span className="trust-icon trust-google" aria-hidden="true">G</span>
             <span className="trust-copy">
               <span className="trust-primary"><strong>{business.rating||'—'}<small>/5</small></strong><span className="trust-stars" aria-label="Five stars">{[0,1,2,3,4].map(i => <Star key={i} size={15} fill="currentColor" />)}</span></span>
-              <span className="trust-detail">{business.reviews||'—'} customer reviews <ChevronRight size={14} aria-hidden="true" /></span>
+              <span className="trust-detail">View Google profile <ChevronRight size={14} aria-hidden="true" /></span>
             </span>
           </a>
           <a className="trust-item" href="#booking" aria-label="Open every day. View appointment availability and book online">
@@ -268,7 +268,7 @@ function App() {
               <strong>{business.rating||'—'}</strong>
               <div>
                 <div className="stars">{[0,1,2,3,4].map(i => <Star key={i} size={18} fill="currentColor" />)}</div>
-                <span>{business.reviews||'—'} reviews</span>
+                <span>Google rating</span>
               </div>
             </div>
           </div>
