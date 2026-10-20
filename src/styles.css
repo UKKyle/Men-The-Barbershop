@@ -675,3 +675,28 @@ html,body,.site{background:#dfe6ef!important;color:#1f2d42!important}
 footer,.footer,.footer-bottom{background:#d6dee8!important;color:#233247!important}
 .mobile-actions{background:#e5eaf1!important;border-top-color:#c3cfdd!important}
 .visit iframe{filter:saturate(.92) contrast(.96)}
+
+/* Men The Barbershop: fully aligned trust strip and booking form */
+.trust-strip{background:#cbd7e7!important;border-top:1px solid #b5c4d9!important;border-bottom:1px solid #b5c4d9!important}
+.trust-strip>.trust-item{border-color:#b3c3d7!important;background:transparent!important}
+.trust-strip .trust-icon{background:#dce7f7!important;border-color:#afc3df!important;color:#244cdb!important}
+.trust-strip .trust-icon svg,.trust-strip .trust-google{color:#244cdb!important}
+.trust-strip .trust-primary,.trust-strip .trust-primary strong,.trust-strip .trust-primary small{color:#1d2e46!important}
+.trust-strip .trust-detail,.trust-strip .trust-eyebrow{color:#425875!important}
+.trust-strip .trust-stars,.trust-strip .trust-stars svg{color:#2347d7!important}
+.services .simple-booking .booking-phone-option{background:#d5e1f2!important;border:1px solid #b5c8df!important;color:#243b57!important}
+.services .simple-booking .booking-phone-option>span{color:#2f4663!important}
+.services .simple-booking .booking-phone-option>a,.services .simple-booking .booking-phone-option>a:visited{color:#2046d0!important}
+.services .simple-booking-form>label:not(.booking-agreement){color:#283c56!important}
+.services .simple-booking-form>input#customer-booking-name,
+.services .simple-booking-form>input.booking-email-input{background:#f8fbff!important;color:#1e2e43!important;border:1px solid #aebfd5!important}
+.services .simple-booking-form>input::placeholder{color:#718198!important;opacity:1!important}
+.services .simple-booking-form .booking-agreement,
+.services .simple-booking-form .booking-agreement span,
+.services .simple-booking-form .booking-privacy,
+.services .booking-email-hint{color:#425672!important}
+.services .booking-agreement input[type=checkbox]{accent-color:#2347d7!important}
+.services .simple-booking-form button.booking-submit{background:#2347d7!important;border:1px solid #2347d7!important;color:#fff!important}
+.services .simple-booking-form button.booking-submit:disabled{background:#c0cee7!important;border-color:#9fb5da!important;color:#526581!important;opacity:1!important;cursor:not-allowed}
+.services .terms-link{color:#2347d7!important}
+.services .simple-booking-form input:focus-visible,.services .booking-agreement input:focus-visible{outline-color:#2347d7!important}
