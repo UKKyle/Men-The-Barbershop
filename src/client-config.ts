@@ -17,7 +17,7 @@ export const client = {
   googleMaps: 'https://www.google.com/maps/search/?api=1&query=Men+The+Barbershop+478+College+Road+Birmingham',
   googleEmbed: 'https://www.google.com/maps?q=478+College+Road+Birmingham+B44+0HL&output=embed',
   rating: 4.9,
-  reviewCount: '50+',
+  reviewCount: 0,
   heroImage: '/images/men-hero.svg',
   gallery: [
     {src:'/images/men-cut-1.svg',alt:'Example haircut gallery placeholder'},
