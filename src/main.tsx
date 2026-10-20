@@ -173,7 +173,7 @@ function App() {
       </div>
 
       <header>
-        <button className="brand" onClick={() => go('top')}>{client.shortName}</button>
+        <button className="brand" onClick={() => go('top')}><img className="brand-logo" src={client.logo} alt="" aria-hidden="true" /><span>{client.shortName}</span></button>
         <nav className={menuOpen ? 'open' : ''}>
           <button onClick={() => go('work')}>Gallery</button>
           <button onClick={() => go('booking')}>Availability</button>
