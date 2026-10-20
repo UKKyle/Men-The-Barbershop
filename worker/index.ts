@@ -234,6 +234,31 @@ export default {
     } catch {return json({error:'This time could not be booked. Refresh availability and try again.'},409);}
   }
   if (!isAdmin) return env.ASSETS.fetch(request);
+  // Safe prospect demonstration: only synthetic slots and public admin UI.
+  // All mutations are rejected. No customer data, database or access tokens exposed.
+  if (PREVIEW_ONLY) {
+    if (url.pathname==='/admin/api/slots' && request.method==='GET') {
+      const {date,time}=londonParts(new Date());
+      return json({slots:proposedSlots(date,time).map(slot=>({...slot,blocked:false,booked:false,customer_name:null,assigned_barber:null}))});
+    }
+    if (url.pathname.startsWith('/admin/api/')) {
+      return json({error:'Read-only demonstration. No real admin data or changes are available.'},403);
+    }
+    if (request.method!=='GET' && request.method!=='HEAD') {
+      return json({error:'Read-only demonstration'},405);
+    }
+    const assetUrl=new URL(request.url);
+    assetUrl.pathname=url.pathname==='/admin' ? '/admin/' : url.pathname;
+    const response=await env.ASSETS.fetch(new Request(assetUrl,request));
+    const headers=new Headers(response.headers);
+    headers.set('Cache-Control','no-store');
+    headers.set('X-Robots-Tag','noindex,nofollow');
+    headers.set('X-Content-Type-Options','nosniff');
+    headers.set('Referrer-Policy','no-referrer');
+    headers.set('X-Frame-Options','DENY');
+    headers.set('Content-Security-Policy',"default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; form-action 'self'; base-uri 'none'; frame-ancestors 'none'");
+    return new Response(response.body,{status:response.status,statusText:response.statusText,headers});
+  }
   const actor=await verifyAdmin(request,env);
   if (!actor) return denied();
   if (url.pathname.startsWith('/admin/api/') && !['GET','HEAD','OPTIONS'].includes(request.method)) {
