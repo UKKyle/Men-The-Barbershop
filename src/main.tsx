@@ -179,7 +179,7 @@ function App() {
           <button onClick={() => go('booking')}>Availability</button>
           <button onClick={() => go('reviews')}>Reviews</button>
           <button onClick={() => go('visit')}>Visit</button>
-          <a href={business.facebook} target="_blank" rel="noreferrer">Facebook</a>
+          <a href={business.googleMaps} target="_blank" rel="noreferrer">Find us</a>
         </nav>
         <a className="header-cta" href="#booking">BOOK APPOINTMENT</a>
         <a className="mobile-header-book" href="#booking" aria-label="View appointment availability"><CalendarDays size={15} aria-hidden="true" /> <span>Book</span></a>
@@ -228,8 +228,8 @@ function App() {
           <a className="trust-item" href={business.googleMaps} target="_blank" rel="noopener noreferrer">
             <span className="trust-icon" aria-hidden="true"><MapPin size={23} strokeWidth={1.6} /></span>
             <span className="trust-copy">
-              <span className="trust-primary"><strong>Your location</strong></span>
-              <span className="trust-detail">Your location · Directions <ChevronRight size={14} aria-hidden="true" /></span>
+              <span className="trust-primary"><strong>College Road</strong></span>
+              <span className="trust-detail">Kingstanding · Directions <ChevronRight size={14} aria-hidden="true" /></span>
             </span>
           </a>
         </section>
@@ -348,12 +348,12 @@ function App() {
 
         <section className="visit" id="visit">
           <div className="map-wrap">
-            <iframe title={client.name+' location'} src={business.googleEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+            <iframe title={client.name+' location'} src={business.googleEmbed||"https://www.google.com/maps?q=478+College+Road+Birmingham+B44+0HL&output=embed"} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
           </div>
 
           <div className="visit-panel">
             <p className="section-kicker">Visit the shop</p>
-            <h2>Your location</h2>
+            <h2>Kingstanding.</h2>
             <p className="visit-address">{business.address}</p>
             <div className="visit-actions">
               <a className="visit-primary" href={business.googleMaps} target="_blank" rel="noreferrer"><MapPin size={16} /> Get directions</a>
@@ -370,8 +370,8 @@ function App() {
 
       <footer>
         <strong>{client.shortName}</strong>
-        <span>Your shop address</span>
-        <div className="footer-links"><a href={business.phoneHref}>Call {business.phone}</a><a href={business.googleMaps} target="_blank" rel="noreferrer">Directions</a><a href={business.facebook} target="_blank" rel="noreferrer">Facebook</a></div>
+        <span>{business.address}</span>
+        <div className="footer-links"><a href={business.phoneHref}>Call {business.phone}</a><a href={business.googleMaps} target="_blank" rel="noreferrer">Directions</a><a href={business.googleMaps} target="_blank" rel="noreferrer">Find us</a></div>
       </footer>
 
       {termsOpen && <div className="terms-backdrop" onMouseDown={event=>{if(event.target===event.currentTarget)setTermsOpen(false);}}>
