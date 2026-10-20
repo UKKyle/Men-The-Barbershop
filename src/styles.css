@@ -632,3 +632,24 @@ footer a,.footer a,.footer-links a{color:#424941}
 .brand-logo{width:30px;height:30px;object-fit:contain;border-radius:50%;flex:none}
 .brand span{min-width:0}
 @media(max-width:760px){.brand-logo{width:25px;height:25px}}
+
+/* Men The Barbershop: cool mineral whites, slate and subtle blue in place of warm cream.
+   Brand colour and all site layout/spacing remain unchanged. */
+html,body,.site{background:#f3f6fa!important;color:#202d40!important}
+.hero-copy{background:linear-gradient(135deg,#f9fbff 0%,#e9eff8 100%)!important;color:#1f2d41!important}
+.services,.work-showcase{background:#f7f9fd!important;color:#202d40!important}
+.reviews{background:#eaf0f8!important;color:#202d40!important}
+.visit,.visit-panel{background:#f7f9fd!important;color:#202d40!important}
+.visit-panel h2,.visit-panel p,.visit-panel a{color:#28374c}
+footer,.footer,.footer-bottom{background:#e8eef7!important;color:#263449!important}
+.simple-booking,.booking-preview,.booking-demo{background:#edf2fa!important;color:#243348!important;border-color:#ced9e8!important}
+.simple-booking-days button,.simple-booking-times button,.booking-preview button:not(.booking-submit){background:#fff!important;color:#243248!important;border-color:#c9d5e5!important}
+.simple-booking-days button.selected,.simple-booking-times button.selected,.booking-preview button.selected{background:#dce7ff!important;color:#173caa!important;border-color:#456ae0!important}
+.booking-preview-head h3,.simple-booking-label,.booking-field-label,.booking-step,.booking-selection-summary,.booking-selection-summary strong{color:#273851!important}
+.simple-booking-form>label,.booking-agreement,.booking-agreement span,.simple-booking-form .booking-privacy,.booking-preview-foot,.booking-preview-foot p,.booking-phone-option,.booking-selection-summary span{color:#4c5b70!important}
+.gate-panel,.terms-dialog,.booking-modal{background:#f9fbff!important;color:#243248!important;border-color:#d3deed!important}
+.mobile-actions{background:#f9fbff!important;border-top-color:#cdd9e9!important}
+.mobile-actions a{color:#253953!important}
+.men-booking-hours{margin:8px 0 0;color:#314865!important;font-size:13px;line-height:1.55;font-weight:650}
+.men-booking-closed{margin:4px 0 0;color:#5f7089!important;font-size:11px;line-height:1.5}
+.men-preview-watermark{background:#f4f7ffdf;color:#2444bd}
