@@ -653,3 +653,25 @@ footer,.footer,.footer-bottom{background:#e8eef7!important;color:#263449!importa
 .men-booking-hours{margin:8px 0 0;color:#314865!important;font-size:13px;line-height:1.55;font-weight:650}
 .men-booking-closed{margin:4px 0 0;color:#5f7089!important;font-size:11px;line-height:1.5}
 .men-preview-watermark{background:#f4f7ffdf;color:#2444bd}
+
+/* FINAL MEN THE BARBERSHOP PALETTE — deep mineral blue, legible charcoal,
+   and clearly differentiated surfaces; template geometry unchanged. */
+html,body,.site{background:#dfe6ef!important;color:#1f2d42!important}
+.site header,.site-header,header{background:#e5eaf1!important;border-bottom:1px solid #c3cfdd!important}
+.hero-copy{background:linear-gradient(135deg,#d9e1ec 0%,#cfd9e7 100%)!important;color:#1f2d42!important}
+.services,.work-showcase{background:#e6edf5!important;color:#1f2d42!important}
+.reviews{background:#d7e0eb!important;color:#1f2d42!important}
+.visit,.visit-panel{background:#dde6f0!important;color:#1f2d42!important}
+.visit-panel h2,.visit-panel p,.visit-panel a,.visit-panel span,.visit-panel strong{color:#22324a!important}
+.visit-panel .hours,.visit-panel .hours h3,.visit-panel .hours div,.visit-panel .hours span,.visit-panel .hours strong{color:#22324a!important;opacity:1!important}
+.visit-panel .hours div{border-color:#bdc9d9!important}
+.visit-panel .hours span{color:#495c75!important}
+.visit-panel .hours strong{color:#1e2f47!important;font-weight:700!important}
+.visit-panel .preview-detail-note{display:none!important}
+.simple-booking,.booking-preview,.booking-demo{background:#e4ebf5!important;color:#22324a!important;border-color:#bcc8d8!important}
+.simple-booking-days button,.simple-booking-times button,.booking-preview button:not(.booking-submit){background:#f3f7fb!important;color:#243248!important;border-color:#bcc8d8!important}
+.simple-booking-days button.selected,.simple-booking-times button.selected,.booking-preview button.selected{background:#d4e2fb!important;color:#173cae!important;border-color:#3d63dd!important}
+.gate-panel,.terms-dialog,.booking-modal{background:#eef3f8!important;color:#243248!important;border-color:#c7d3e1!important}
+footer,.footer,.footer-bottom{background:#d6dee8!important;color:#233247!important}
+.mobile-actions{background:#e5eaf1!important;border-top-color:#c3cfdd!important}
+.visit iframe{filter:saturate(.92) contrast(.96)}
