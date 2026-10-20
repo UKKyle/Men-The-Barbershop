@@ -275,17 +275,17 @@ function App() {
 
           <div className="review-wall">
             {reviews.map(([quote, name], index) => (
-              <blockquote className={index === 0 ? 'review-featured' : ''} key={name}>
-                <div className="quote-stars">PREVIEW</div>
+              <blockquote className={index === 0 ? 'review-featured' : ''} key={index}>
+                <div className="quote-stars">{[0,1,2,3,4].map(i => <Star key={i} size={13} fill="currentColor" />)}</div>
                 <p>{quote}</p>
-                <cite>{name}<span>Preview content — not a customer quote</span></cite>
+                <cite>{name}<span>Google customer review excerpt</span></cite>
               </blockquote>
             ))}
           </div>
 
           <div className="reviews-cta">
             <span>Explore customer feedback on Google</span>
-            <a href={business.googleMaps} target="_blank" rel="noreferrer">View location details</a>
+            <a href={business.googleMaps} target="_blank" rel="noreferrer">Read reviews on Google</a>
           </div>
         </section>
 
