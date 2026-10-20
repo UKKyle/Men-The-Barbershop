@@ -628,3 +628,15 @@ footer a,.footer a,.footer-links a{color:#424941}
 .men-preview-watermark{position:absolute;bottom:12px;left:0;right:0;z-index:4;text-align:center;background:#ffffffc9;color:#283d75;font-size:12px;font-weight:850;letter-spacing:.2em;padding:10px;pointer-events:none}
 .men-illustrative-note{max-width:1240px;margin:0 auto 16px;color:#626d7b;font-size:12px}
 @media(max-width:760px){.hero h1{font-size:clamp(43px,10vw,70px)!important}}
+
+/* Outreach-safe prospect presentation */
+.men-trust-intro{margin:25px 0 0;color:#5b6676;font-size:13px;line-height:1.65}
+.men-review-caveat{max-width:330px;color:#55606f;font-size:13px;line-height:1.6}
+.men-review-placeholder{max-width:1240px;margin:0 auto;padding:clamp(28px,5vw,64px);border:1px solid #d8dce5;background:#fffefa;border-radius:12px}
+.men-review-placeholder p{margin:0 0 10px;font:400 clamp(28px,3vw,44px)/1.15 Georgia,serif;color:#263449}
+.men-review-placeholder span{color:#657181;line-height:1.7;font-size:14px}
+.men-map-fallback{min-height:570px;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;padding:34px;text-align:center;color:#223c88;background:radial-gradient(circle at 70% 20%,#d9e3fa,transparent 48%),linear-gradient(145deg,#eff3fb,#dfe6f4)}
+.men-map-fallback strong{font:500 clamp(24px,2.5vw,36px)/1.1 Georgia,serif;color:#2b3754}
+.men-map-fallback span{font-size:13px;color:#596879}
+.men-map-fallback a{display:inline-flex;padding:13px 18px;background:#2447df;color:#fff;text-decoration:none;font-weight:700;border-radius:7px}
+@media(max-width:760px){.men-map-fallback{min-height:340px}.men-review-placeholder{margin:0 20px}}
