@@ -294,9 +294,9 @@ function App() {
             <div className="services-copy">
               <h2>Book your next visit.</h2>
             </div>
-            <div className="booking-preview simple-booking" id="booking" aria-label="Upcoming appointment availability">
+            <div className="booking-preview simple-booking" id="booking" aria-label="Example appointment times within published opening hours">
               <div className="booking-preview-head">
-                <div><h3>Choose your appointment.</h3></div>
+                <div><h3>Choose your appointment.</h3><p className="men-booking-hours">Tuesday–Friday 9:30am–5pm · Saturday 9am–4pm</p><p className="men-booking-closed">Closed Sunday and Monday · Times are illustrative, not live availability</p></div>
               </div>
               <div className="booking-phone-option"><span>Prefer to book by phone?</span><a href={business.phoneHref} aria-label={`Call ${client.name} on ${business.phone}`}><Phone size={16}/> <span>{business.phone}</span></a></div>
               {!bookingConfirmation && (!slotsLoaded ? <p className="simple-booking-empty">Checking upcoming availability…</p> :
@@ -311,7 +311,7 @@ function App() {
                       <strong>{new Date(date+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short'})}</strong>
                     </button>)}
                   </div>
-                  <p className="simple-booking-label">Available times</p>
+                  <p className="simple-booking-label">Example times · not live availability</p>
                   <div className="simple-booking-times">
                     {visibleTimes.map(slot=><button type="button" key={slot.time} className={bookingTime===slot.time?'selected':''} aria-pressed={bookingTime===slot.time} onClick={()=>setBookingTime(slot.time)}>{slot.time}</button>)}
                   </div>
