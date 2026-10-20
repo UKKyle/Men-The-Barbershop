@@ -179,7 +179,7 @@ function App() {
           <button onClick={() => go('booking')}>Availability</button>
           <button onClick={() => go('reviews')}>Reviews</button>
           <button onClick={() => go('visit')}>Visit</button>
-          <a href={business.googleMaps} target="_blank" rel="noreferrer">Find us</a>
+          <a href={business.facebook} target="_blank" rel="noreferrer">Facebook</a>
         </nav>
         <a className="header-cta" href="#booking">BOOK APPOINTMENT</a>
         <a className="mobile-header-book" href="#booking" aria-label="View appointment availability"><CalendarDays size={15} aria-hidden="true" /> <span>Book</span></a>
@@ -194,7 +194,11 @@ function App() {
             <div className="hero-top"><p className="hero-location">{client.locationLabel}</p>
             <h1>{client.headline[0]}<br/>{client.headline[1]}</h1></div>
             <div className="hero-bottom"><p className="hero-service-line">{client.tagline}</p>
-            <p className="men-trust-intro">A local barbershop in Kingstanding · Private website concept</p>
+            <div className="rating-row">
+              <div className="stars">{[0,1,2,3,4].map(i => <Star key={i} size={17} fill="currentColor" />)}</div>
+              <strong>{business.rating||'—'}</strong>
+              <span>{business.reviews||'—'} reviews</span>
+            </div>
             <div className="hero-actions">
               <a className="hero-primary" href="#booking"><CalendarDays size={16} /> Book appointment</a>
               <a className="hero-secondary" href={business.googleMaps} target="_blank" rel="noreferrer"><MapPin size={16} /> Directions</a>
@@ -207,19 +211,25 @@ function App() {
         </section>
 
         <section className="trust-strip" aria-label={'Why visit '+client.name}>
-          <a className="trust-item trust-reviews" href={business.googleMaps} target="_blank" rel="noopener noreferrer"><span className="trust-icon"><MapPin size={23}/></span><span className="trust-copy"><span className="trust-primary"><strong>Kingstanding</strong></span><span className="trust-detail">Find us on College Road</span></span></a>
-          <a className="trust-item" href="#booking" aria-label="View example appointment availability">
+          <a className="trust-item trust-reviews" href={business.googleMaps} target="_blank" rel="noopener noreferrer" aria-label={`Find ${client.name} on Google Maps. Rating ${business.rating||'—'} out of 5 from ${business.reviews||'—'} reviews`}>
+            <span className="trust-icon trust-google" aria-hidden="true">G</span>
+            <span className="trust-copy">
+              <span className="trust-primary"><strong>{business.rating||'—'}<small>/5</small></strong><span className="trust-stars" aria-label="Five stars">{[0,1,2,3,4].map(i => <Star key={i} size={15} fill="currentColor" />)}</span></span>
+              <span className="trust-detail">{business.reviews||'—'} customer reviews <ChevronRight size={14} aria-hidden="true" /></span>
+            </span>
+          </a>
+          <a className="trust-item" href="#booking" aria-label="Open every day. View appointment availability and book online">
             <span className="trust-icon" aria-hidden="true"><CalendarDays size={23} strokeWidth={1.6} /></span>
             <span className="trust-copy">
-              <span className="trust-primary"><strong>Appointment preview</strong></span>
+              <span className="trust-primary"><strong>Mon–Sun</strong></span>
               <span className="trust-detail">See appointments · Book online</span>
             </span>
           </a>
           <a className="trust-item" href={business.googleMaps} target="_blank" rel="noopener noreferrer">
             <span className="trust-icon" aria-hidden="true"><MapPin size={23} strokeWidth={1.6} /></span>
             <span className="trust-copy">
-              <span className="trust-primary"><strong>College Road</strong></span>
-              <span className="trust-detail">Birmingham · Directions <ChevronRight size={14} aria-hidden="true" /></span>
+              <span className="trust-primary"><strong>Your location</strong></span>
+              <span className="trust-detail">Your location · Directions <ChevronRight size={14} aria-hidden="true" /></span>
             </span>
           </a>
         </section>
@@ -227,7 +237,7 @@ function App() {
         <section className="work-showcase" id="work">
           <div className="work-head">
             <div>
-              <h2>Explore the styles.</h2>
+              <h2>Recent cuts.</h2>
             </div>
             <div className="work-controls" aria-label="Browse recent work">
               <button type="button" onClick={() => moveWorkReel(-1)} aria-label="Previous image">
@@ -254,13 +264,27 @@ function App() {
             <div>
               <h2>A reputation already earned.</h2>
             </div>
-            <p className="men-review-caveat">Customer feedback can be featured here once verified.</p>
+            <div className="review-score">
+              <strong>{business.rating||'—'}</strong>
+              <div>
+                <div className="stars">{[0,1,2,3,4].map(i => <Star key={i} size={18} fill="currentColor" />)}</div>
+                <span>{business.reviews||'—'} reviews</span>
+              </div>
+            </div>
           </div>
 
-          <div className="men-review-placeholder"><p>Built around your reputation.</p><span>Verified reviews and customer testimonials can be added with the shop’s permission.</span></div>
+          <div className="review-wall">
+            {reviews.map(([quote, name], index) => (
+              <blockquote className={index === 0 ? 'review-featured' : ''} key={name}>
+                <div className="quote-stars">{[0,1,2,3,4].map(i => <Star key={i} size={13} fill="currentColor" />)}</div>
+                <p>{quote}</p>
+                <cite>{name}<span>Example review</span></cite>
+              </blockquote>
+            ))}
+          </div>
 
           <div className="reviews-cta">
-            <span>Find out more about the shop</span>
+            <span>Read more customer feedback</span>
             <a href={business.googleMaps} target="_blank" rel="noreferrer">View location details</a>
           </div>
         </section>
@@ -324,12 +348,12 @@ function App() {
 
         <section className="visit" id="visit">
           <div className="map-wrap">
-            <div className="men-map-fallback"><MapPin size={36}/><strong>Men The Barbershop</strong><span>478 College Road · Kingstanding</span><a href={business.googleMaps} target="_blank" rel="noreferrer">View on Google Maps ↗</a></div>
+            <iframe title={client.name+' location'} src={business.googleEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
           </div>
 
           <div className="visit-panel">
             <p className="section-kicker">Visit the shop</p>
-            <h2>Kingstanding.</h2>
+            <h2>Your location</h2>
             <p className="visit-address">{business.address}</p>
             <div className="visit-actions">
               <a className="visit-primary" href={business.googleMaps} target="_blank" rel="noreferrer"><MapPin size={16} /> Get directions</a>
@@ -346,8 +370,8 @@ function App() {
 
       <footer>
         <strong>{client.shortName}</strong>
-        <span>{business.address}</span>
-        <div className="footer-links"><a href={business.phoneHref}>Call {business.phone}</a><a href={business.googleMaps} target="_blank" rel="noreferrer">Directions</a><a href={business.googleMaps} target="_blank" rel="noreferrer">Find us</a></div>
+        <span>Your shop address</span>
+        <div className="footer-links"><a href={business.phoneHref}>Call {business.phone}</a><a href={business.googleMaps} target="_blank" rel="noreferrer">Directions</a><a href={business.facebook} target="_blank" rel="noreferrer">Facebook</a></div>
       </footer>
 
       {termsOpen && <div className="terms-backdrop" onMouseDown={event=>{if(event.target===event.currentTarget)setTermsOpen(false);}}>
