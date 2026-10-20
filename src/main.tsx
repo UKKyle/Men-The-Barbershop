@@ -362,7 +362,7 @@ function App() {
             <div className="hours">
               <h3>Opening hours</h3>
               {business.hours.map(([day,time]) => <div key={day}><span>{day}</span><strong>{time}</strong></div>)}
-              <p className="preview-detail-note">Published opening hours. Please contact the shop to confirm holiday changes.</p>
+              
             </div>
           </div>
         </section>
