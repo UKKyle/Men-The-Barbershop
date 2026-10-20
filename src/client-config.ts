@@ -21,10 +21,10 @@ export const client = {
   logo: '/images/men-logo.webp',
   heroImage: '/images/men-cut-1.webp',
   gallery: [
-    {src:'/images/men-cut-1.webp',alt:'Illustrative haircut photograph, not the shop's portfolio'},
-    {src:'/images/men-cut-2.webp',alt:'Illustrative haircut photograph, not the shop's portfolio'},
-    {src:'/images/men-cut-3.webp',alt:'Illustrative haircut photograph, not the shop's portfolio'},
-    {src:'/images/men-cut-4.webp',alt:'Illustrative haircut photograph, not the shop's portfolio'},
+    {src:'/images/men-cut-1.webp',alt:'Illustrative haircut photograph, not the shop portfolio'},
+    {src:'/images/men-cut-2.webp',alt:'Illustrative haircut photograph, not the shop portfolio'},
+    {src:'/images/men-cut-3.webp',alt:'Illustrative haircut photograph, not the shop portfolio'},
+    {src:'/images/men-cut-4.webp',alt:'Illustrative haircut photograph, not the shop portfolio'},
   ],
   services: [
     ['Haircuts','Classic and modern cuts, finished to suit your style.'],
