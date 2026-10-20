@@ -206,7 +206,7 @@ function App() {
           </div>
 
           <figure className="hero-image">
-            <img src={business.heroImage} alt={client.name+' hero placeholder'} />
+            <img src={business.heroImage} alt="Illustrative finished haircut, not a photograph of the shop’s work" />
           </figure>
         </section>
 
@@ -218,11 +218,11 @@ function App() {
               <span className="trust-detail">View Google profile <ChevronRight size={14} aria-hidden="true" /></span>
             </span>
           </a>
-          <a className="trust-item" href="#booking" aria-label="Open every day. View appointment availability and book online">
+          <a className="trust-item" href="#booking" aria-label="Open Tuesday to Saturday. View demonstration appointment availability">
             <span className="trust-icon" aria-hidden="true"><CalendarDays size={23} strokeWidth={1.6} /></span>
             <span className="trust-copy">
-              <span className="trust-primary"><strong>Mon–Sun</strong></span>
-              <span className="trust-detail">See appointments · Book online</span>
+              <span className="trust-primary"><strong>Tue–Sat</strong></span>
+              <span className="trust-detail">Walk-ins · Appointment preview</span>
             </span>
           </a>
           <a className="trust-item" href={business.googleMaps} target="_blank" rel="noopener noreferrer">
@@ -276,15 +276,15 @@ function App() {
           <div className="review-wall">
             {reviews.map(([quote, name], index) => (
               <blockquote className={index === 0 ? 'review-featured' : ''} key={name}>
-                <div className="quote-stars">{[0,1,2,3,4].map(i => <Star key={i} size={13} fill="currentColor" />)}</div>
+                <div className="quote-stars">PREVIEW</div>
                 <p>{quote}</p>
-                <cite>{name}<span>Example review</span></cite>
+                <cite>{name}<span>Preview content — not a customer quote</span></cite>
               </blockquote>
             ))}
           </div>
 
           <div className="reviews-cta">
-            <span>Read more customer feedback</span>
+            <span>Explore customer feedback on Google</span>
             <a href={business.googleMaps} target="_blank" rel="noreferrer">View location details</a>
           </div>
         </section>
@@ -362,7 +362,7 @@ function App() {
             <div className="hours">
               <h3>Opening hours</h3>
               {business.hours.map(([day,time]) => <div key={day}><span>{day}</span><strong>{time}</strong></div>)}
-              {previewOnly && <p className="preview-detail-note">Hours are indicative for this concept and will be confirmed before launch.</p>}
+              <p className="preview-detail-note">Published opening hours. Please contact the shop to confirm holiday changes.</p>
             </div>
           </div>
         </section>
@@ -371,7 +371,7 @@ function App() {
       <footer>
         <strong>{client.shortName}</strong>
         <span>{business.address}</span>
-        <div className="footer-links"><a href={business.phoneHref}>Call {business.phone}</a><a href={business.googleMaps} target="_blank" rel="noreferrer">Directions</a><a href={business.googleMaps} target="_blank" rel="noreferrer">Find us</a></div>
+        <div className="footer-links"><a href={business.phoneHref}>Call {business.phone}</a><a href={business.googleMaps} target="_blank" rel="noreferrer">Directions</a><a href="#visit">Opening hours</a></div>
       </footer>
 
       {termsOpen && <div className="terms-backdrop" onMouseDown={event=>{if(event.target===event.currentTarget)setTermsOpen(false);}}>
