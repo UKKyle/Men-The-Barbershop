@@ -52,7 +52,9 @@ function proposedSlots(today:string,currentTime:string,days=14) {
   for(let d=0;d<days;d++){
     const day=new Date(base.getTime()+d*86400000);
     const date=day.toISOString().slice(0,10);
-    const [start,end]=openingHours[day.getUTCDay()];
+    const hours=openingHours[day.getUTCDay()];
+    if(!hours)continue; // Closed: no advertised preview slots.
+    const [start,end]=hours;
     const toMin=(v:string)=>Number(v.slice(0,2))*60+Number(v.slice(3,5));
     for(let minute=toMin(start);minute+60<=toMin(end);minute+=60){
       const time=`${String(Math.floor(minute/60)).padStart(2,'0')}:${String(minute%60).padStart(2,'0')}`;
