@@ -32,10 +32,12 @@ export const client = {
     ['Hair & beard','A complete tidy-up with haircut, trim and beard shape.'],
     ['Wet & dry shave','Traditional shaving options for a clean finish.'],
   ],
+  // Short verbatim excerpts from customer reviews surfaced for the matching Google business profile.
+  // Reviewer names were not verified, so attribute generically and link to Google.
   reviews: [
-    ['“Customer review preview — genuine feedback to be added.”','Illustrative placeholder'],
-    ['“Actual review quotations can be added with attribution.”','Illustrative placeholder'],
-    ['“A selection of customer feedback will appear here.”','Illustrative placeholder'],
+    ['“Incredibly friendly, patient and completely changed the way my son sees haircuts”','Google reviewer'],
+    ['“I don’t trust my beard to just anyone.”','Google reviewer'],
+    ['“Friendly atmosphere, family feel and great talent!”','Google reviewer'],
   ],
   // Demo appointment generation (weekday 0=Sunday). Adjust to verified client hours.
   bookingHours: {
